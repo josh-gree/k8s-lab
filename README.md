@@ -59,3 +59,10 @@ ip-192-168-16-15.ec2.internal    Ready    <none>   3m46s   v1.14.9-eks-1f0ca9
 ip-192-168-19-88.ec2.internal    Ready    <none>   3m50s   v1.14.9-eks-1f0ca9
 ip-192-168-63-145.ec2.internal   Ready    <none>   3m52s   v1.14.9-eks-1f0ca9
 ```
+
+- get your role name
+
+```
+>> STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
+>> ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
+```
