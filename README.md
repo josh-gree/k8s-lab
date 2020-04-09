@@ -1,3 +1,5 @@
+Based on https://eksworkshop.com/
+
 - create an ssh key and upload
 
 ```bash
