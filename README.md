@@ -66,3 +66,10 @@ ip-192-168-63-145.ec2.internal   Ready    <none>   3m52s   v1.14.9-eks-1f0ca9
 >> STACK_NAME=$(eksctl get nodegroup --cluster eksworkshop-eksctl -o json | jq -r '.[].StackName')
 >> ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
 ```
+
+## Notebooks
+
+- [BEGINNER1](nbs/BEGINNER.ipynb)
+- [BEGINNER2](nbs/BEGINNER_2.ipynb)
+- [BEGINNER3](nbs/BEGINNER_3.ipynb)
+- [BEGINNER4](nbs/BEGINNER_4.ipynb)
