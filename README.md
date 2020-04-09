@@ -40,5 +40,22 @@ EOF
 - create cluster - to use a specific AWS_PROFILE set this env var
 
 ```bash
-eksctl create cluster -f eksworkshop.yml
+>> eksctl create cluster -f eksworkshop.yml
+```
+
+- may need to updaqte kubeconfig using
+
+```bash
+>> aws eks --region region update-kubeconfig --name eksworkshop-eksctl
+```
+
+- check nodes are available
+
+```bash
+>> kubectl get nodes
+
+NAME                             STATUS   ROLES    AGE     VERSION
+ip-192-168-16-15.ec2.internal    Ready    <none>   3m46s   v1.14.9-eks-1f0ca9
+ip-192-168-19-88.ec2.internal    Ready    <none>   3m50s   v1.14.9-eks-1f0ca9
+ip-192-168-63-145.ec2.internal   Ready    <none>   3m52s   v1.14.9-eks-1f0ca9
 ```
